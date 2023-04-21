@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  pokemonimg-service:
+    container_name: pokemonimg-service
+    networks:
+      - spring-net
+    restart: "no"
+    depends_on:
+      - pokemon-mysql
+    image: ghcr.io/teunbuis-semester6-pogokwetter/pokemonimg-service:latest
+    ports:
+      - 8080:8080
+
+  pokemonimg-mysql:
+    container_name: pokemonimg-mysql
+    image: mysql:latest
+    ports:
+      - 33007:3307
+    networks:
+      - spring-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=Teun
+      - MYSQL_DATABASE=pokemon
+      - MYSQL_TCP_PORT=3307
+    volumes:
+      - pokemonimgdata:/var/lib/mysql
+      - pokemonimgdata:/etc/mysql/conf.d
+
+networks:
+  spring-net:
+    name: spring-net
+    driver: bridge
+
+volumes:
+  pokemonimgdata:
