@@ -6,10 +6,10 @@ services:
       - spring-net
     restart: "no"
     depends_on:
-      - pokemon-mysql
+      - pokemonimg-mysql
     image: ghcr.io/teunbuis-semester6-pogokwetter/pokemonimg-service:latest
     ports:
-      - 8080:8080
+      - 8081:8081
 
   pokemonimg-mysql:
     container_name: pokemonimg-mysql
