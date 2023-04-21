@@ -20,7 +20,7 @@ services:
       - spring-net
     environment:
       - MYSQL_ROOT_PASSWORD=Teun
-      - MYSQL_DATABASE=pokemon
+      - MYSQL_DATABASE=pokemonimg
       - MYSQL_TCP_PORT=3307
     volumes:
       - pokemonimgdata:/var/lib/mysql
