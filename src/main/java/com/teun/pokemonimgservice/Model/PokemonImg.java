@@ -19,7 +19,7 @@ public class PokemonImg {
     private int pokemonid;
 
     @Lob
-    @Column(name="img", nullable = false)
+    @Column(name = "img", nullable = false, columnDefinition = "MEDIUMBLOB")
     private byte[] pokemonpicture;
 
     //Getters & Setters
