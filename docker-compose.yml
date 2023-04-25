@@ -15,7 +15,7 @@ services:
     container_name: pokemonimg-mysql
     image: mysql:latest
     ports:
-      - 33007:3307
+      - 3307:3307
     networks:
       - spring-net
     environment:

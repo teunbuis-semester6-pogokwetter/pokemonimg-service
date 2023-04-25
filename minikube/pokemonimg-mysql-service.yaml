@@ -10,8 +10,8 @@ metadata:
   name: pokemonimg-mysql
 spec:
   ports:
-    - name: "33007"
-      port: 33007
+    - name: "3307"
+      port: 3307
       targetPort: 3307
   selector:
     io.kompose.service: pokemonimg-mysql
